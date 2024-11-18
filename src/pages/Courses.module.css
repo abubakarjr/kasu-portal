@@ -1,0 +1,134 @@
+.coursesContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(
+    to bottom right,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  color: var(--color-dark--1);
+  padding: 1.5rem;
+}
+
+.coursesContent {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 610px;
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.dropdown {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.actionButton {
+  background-color: #28a745;
+  color: white;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.actionButton:hover {
+  background-color: var(--color-primary--dark);
+}
+
+.tableWrapper {
+  max-height: 250px;
+  overflow-y: auto;
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.courseTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.courseTable th,
+.courseTable td {
+  padding: 0.8rem;
+  border: 1px solid #000;
+}
+
+.courseTable th {
+  background-color: var(--color-primary);
+  color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.courseTable tr:nth-child(even) {
+  background-color: #bed7c4;
+}
+
+.courseTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+.noData {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--color-dark--2);
+}
+
+.registerButton {
+  background-color: #28a745;
+  color: white;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.registerButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.registerButton:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .coursesContent {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 100%;
+  }
+}

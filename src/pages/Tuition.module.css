@@ -1,0 +1,46 @@
+.tuitionContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(
+    to bottom right,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  color: var(--color-dark--1);
+  padding: 1.5rem;
+}
+
+.tuitionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.tuitionContent h2 {
+  font-size: 2.2rem;
+  color: var(--color-dark--2);
+  margin-bottom: 1rem;
+}
+
+.tuitionContent p {
+  font-size: 1.4rem;
+  color: var(--color-dark--1);
+  line-height: 1.6;
+}
+
+.paymentButton {
+  padding: 0.8rem 1.6rem;
+  font-size: 1.4rem;
+  color: var(--color-light--1);
+  background-color: var(--color-brand--1);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.paymentButton:hover {
+  background-color: var(--color-brand--2);
+}

@@ -1,0 +1,40 @@
+{
+  "students": [
+    {
+      "studentName": "John Doe",
+      "university": "Kaduna State University",
+      "program": "Computer Science",
+      "enrollmentDate": "2021-10-01T00:00:00.000Z",
+      "notes": "Excellent in programming and data structures.",
+      "contact": {
+        "email": "johndoe@example.com",
+        "phone": "+2348000000001"
+      },
+      "id": 73930385
+    },
+    {
+      "studentName": "Jane Smith",
+      "university": "Kaduna State University",
+      "program": "Mathematics",
+      "enrollmentDate": "2022-09-15T00:00:00.000Z",
+      "notes": "Strong analytical skills and a keen interest in AI.",
+      "contact": {
+        "email": "janesmith@example.com",
+        "phone": "+2348000000002"
+      },
+      "id": 17806751
+    },
+    {
+      "studentName": "Ali Musa",
+      "university": "Kaduna State University",
+      "program": "Statistics",
+      "enrollmentDate": "2020-02-01T00:00:00.000Z",
+      "notes": "Specializes in statistical modeling and data analysis.",
+      "contact": {
+        "email": "alimusa@example.com",
+        "phone": "+2348000000003"
+      },
+      "id": 98443197
+    }
+  ]
+}
