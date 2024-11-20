@@ -1,44 +1,59 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Login.module.css";
-import PageNav from "../components/PageNav";
+import ButtonStyles from "../components/Button.Module.css"; // Importing Button styles
 
 export default function StudentLogin() {
-  // PRE-FILL FOR DEV PURPOSES
-  const [studentId, setStudentId] = useState("KASU12345");
-  const [password, setPassword] = useState("securepassword");
+  const [studentId, setStudentId] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log({ studentId, password });
+  };
 
   return (
     <main className={styles.login}>
-      <PageNav />
-      <form className={styles.form}>
-        <h2>Student Login</h2>
-
-        <div className={styles.row}>
-          <label htmlFor="studentId">Student ID</label>
-          <input
-            type="text"
-            id="studentId"
-            placeholder="Enter your student ID"
-            onChange={(e) => setStudentId(e.target.value)}
-            value={studentId}
-          />
+      <div className={styles.card}>
+        <div className={styles.logo}>
+          <img src="/logo.png" alt="KASU Portal Logo" />
         </div>
-
-        <div className={styles.row}>
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            placeholder="Enter your password"
-            onChange={(e) => setPassword(e.target.value)}
-            value={password}
-          />
-        </div>
-
-        <div>
-          <button type="submit">Login</button>
-        </div>
-      </form>
+        <h2 className={styles.title}>Sign in</h2>
+        <p className={styles.subtitle}>to continue to KASU Portal</p>
+        <form onSubmit={handleLogin} className={styles.form}>
+          <div className={styles.inputGroup}>
+            <input
+              type="text"
+              placeholder="Student ID"
+              value={studentId}
+              onChange={(e) => setStudentId(e.target.value)}
+              className={styles.input}
+              required
+            />
+          </div>
+          <div className={styles.inputGroup}>
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className={styles.input}
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className={`${ButtonStyles.btn} ${ButtonStyles.primary}`}
+          >
+            <Link
+              to="/dashboard"
+              className={`${ButtonStyles.btn} ${ButtonStyles.primary}`}
+            >
+              Login
+            </Link>
+          </button>
+        </form>
+      </div>
     </main>
   );
 }

@@ -1,34 +1,102 @@
+/* Login Page Styling */
 .login {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   background: linear-gradient(
     to bottom right,
-    var(--color-primary),
-    var(--color-secondary)
+    var(--color-brand--1),
+    var(--color-brand--2)
   );
   color: var(--color-dark--1);
-  padding: 1.5rem;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.card {
+  width: 100%;
+  max-width: 36rem;
+  background-color: var(--color-dark--2);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.logo img {
+  max-width: 100px;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.4rem;
+  color: var(--color-light--2);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  color: var(--color-light--1);
+  margin-bottom: 2rem;
 }
 
 .form {
-  background-color: var(--color-dark--2);
-  border-radius: 7px;
-  padding: 2rem 3rem;
-  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  color: rgb(25, 203, 25);
-  align-items: center;
-
-  /* Different from other form */
-  width: 48rem;
-  margin: 8rem auto;
+  gap: 1.5rem;
 }
 
-.row {
+.inputGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+}
+
+.input {
+  width: 93%;
+  padding: 0.8rem 1.2rem;
+  font-family: inherit;
+  font-size: 1.6rem;
+  border: solid 2px;
+  border-radius: 5px;
+  background-color: var(--color-light--3);
+  transition: background-color 0.2s ease;
+}
+
+.input:focus {
+  background-color: #fff;
+  outline: none;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .input {
+    font-size: 1.4rem;
+  }
+
+  button {
+    font-size: 1.4rem;
+  }
 }
