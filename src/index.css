@@ -18,7 +18,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  /* box-sizing: inherit; */
 }
 
 html {
@@ -26,11 +26,18 @@ html {
   box-sizing: border-box;
 }
 
+/* For all browsers */
+::-webkit-scrollbar {
+  display: none; /* Hides scrollbar in Webkit browsers (Chrome, Safari, Edge) */
+}
+
 body {
   font-family: "Manrope", sans-serif;
   color: var(--color-light--2);
   font-weight: 400;
   line-height: 1.6;
+  scrollbar-width: none; /* Hides scrollbar in Firefox */
+  -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer */
 }
 
 label {

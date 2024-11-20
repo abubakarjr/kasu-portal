@@ -15,7 +15,7 @@ import Logo from "./Logo";
 import styles from "./PageNav.module.css";
 
 function PageNav() {
-  const [menuOpen, setMenuOpen] = useState(true); // Sidebar is open by default
+  const [menuOpen, setMenuOpen] = useState(false); // Sidebar is open by default
 
   function toggleMenu() {
     setMenuOpen((prev) => !prev);
