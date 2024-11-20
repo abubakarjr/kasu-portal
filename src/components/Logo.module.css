@@ -1,3 +1,50 @@
+/* Logo Container */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Ensures the logo aligns to the start */
+  height: 100%; /* Full height to align with topNav */
+  text-decoration: none; /* Removes default link styling */
+  color: inherit; /* Ensures text inherits the parent color */
+  gap: 0.5rem; /* Adds spacing between the logo and text */
+  margin-left: 1rem; /* Adds padding from the container's edge */
+  transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+
+.logoContainer:hover {
+  transform: scale(1.02); /* Slight zoom effect on hover */
+}
+
+/* Logo Image */
 .logo {
-  height: 5.2rem;
+  height: 5rem; /* Adjusted for consistency */
+  transition: height 0.3s ease-in-out; /* Smooth resizing */
+}
+
+/* Logo Text */
+.logoText {
+  font-size: 4rem; /* Text size */
+  font-weight: bold; /* Makes text more prominent */
+  color: var(--color-dark--1); /* Matches branding color */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .logo {
+    height: 5rem;
+  }
+
+  .logoText {
+    font-size: 4rem; /* Adjusts text size for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    height: 5rem; /* Adjusts logo size for mobile */
+  }
+
+  .logoText {
+    font-size: 4rem; /* Adjusts text size for mobile */
+  }
 }

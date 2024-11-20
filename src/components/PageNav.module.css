@@ -1,48 +1,158 @@
-.nav {
+/* General Container */
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  flex-direction: column; /* For stacking topNav on mobile */
+}
+
+/* Top Navigation Bar */
+.topNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6rem;
+  background-color: var(--color-brand--1);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: var(--color-brand--1);
-  padding: 1rem 2rem;
-  border-bottom: 2px solid var(--color-primary);
+  padding: 0 1rem;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
+  z-index: 1000;
 }
 
+/* Hamburger Menu */
 .hamburger {
-  display: none;
   background: none;
   border: none;
-  font-size: 2rem;
+  color: var(--color-dark--1);
+  font-size: 3rem;
   cursor: pointer;
+}
+
+/* Search Bar */
+.searchBar {
+  flex: 0.4;
+  display: flex;
+  align-items: center;
+  margin: 0 1rem;
+  background-color: var(--color-light--2);
+  border-radius: 5px;
+  padding: 0.4rem;
+}
+
+.searchIcon {
+  margin-right: 0.5rem;
+  color: var(--color-dark--2);
+}
+
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
   color: var(--color-dark--1);
 }
 
+/* User Profile */
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notificationIcon {
+  font-size: 1.5rem;
+  color: var(--color-dark--1);
+}
+
+.profileImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Sidebar */
+.sidebar {
+  height: 100%;
+  width: 250px;
+  background-color: var(--color-brand--1);
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s;
+  position: fixed;
+  top: 6rem; /* Below the top nav */
+  left: 0;
+  overflow: hidden;
+  z-index: 900;
+}
+
+.sidebar.open {
+  width: 150px;
+}
+
+.sidebar.closed {
+  width: 6rem;
+}
+
+/* Sidebar Menu */
 .menu {
   list-style: none;
   display: flex;
-  align-items: center;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .menu li a {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: var(--color-dark--1);
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
-  transition: color 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
 }
 
 .menu li a:hover {
-  color: var(--color-primary);
+  background-color: var(--color-light--2);
 }
 
-.ctaLink {
+.icon {
+  margin-right: 1rem;
+  font-size: 2.5rem;
+}
+
+.menu li span {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Hide text when sidebar is closed */
+.sidebar.closed .menu li span {
+  display: none;
+}
+
+/* Active Link */
+.active {
   background-color: var(--color-primary);
-  color: hsl(62, 49%, 86%);
-  padding: 0.5rem 1.5rem;
-  border-radius: 5px;
-  font-weight: 700;
+  color: var(--color-light--1);
+}
+
+/* CTA Link */
+.ctaLink {
+  margin-top: auto;
+  background-color: var(--color-primary);
+  color: var(--color-light--1);
+  font-weight: bold;
+  text-align: center;
 }
 
 .ctaLink:hover {
@@ -50,25 +160,79 @@
 }
 
 /* Responsive Styles */
+
+/* Tablet View */
+@media (max-width: 1024px) {
+  .topNav {
+    padding: 0 0.5rem;
+  }
+
+  .searchBar {
+    margin: 0 0.5rem;
+    padding: 0.4rem;
+  }
+
+  .sidebar {
+    top: 6rem; /* Adjusted to match new topNav height */
+    width: 150px; /* New open width */
+  }
+
+  .sidebar.closed {
+    width: 6rem; /* Slim collapsed state */
+  }
+
+  .menu li a {
+    font-size: 0.9rem;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile View */
 @media (max-width: 768px) {
+  .topNav {
+    height: 6rem;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+  }
+
   .hamburger {
-    display: block;
+    font-size: 2rem;
   }
 
-  .menu {
-    flex-direction: column;
-    position: absolute;
-    top: 5rem;
-    right: 0;
-    background-color: var(--color-secondary);
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-    gap: 1.5rem;
-    display: none;
+  .logo {
+    font-size: 1rem;
   }
 
-  .menu.open {
-    display: flex;
+  .searchBar {
+    display: none; /* Hide search bar on mobile */
+  }
+
+  .userProfile {
+    gap: 0.5rem;
+  }
+
+  .profileImage {
+    width: 30px;
+    height: 30px;
+  }
+
+  .sidebar.closed {
+    width: 6rem; /* Slim collapsed state */
+  }
+
+  .sidebar.open {
+    transform: translateX(0); /* Slide-in effect */
+    width: 120px; /* Adjusted open width */
+  }
+
+  .menu li a {
+    font-size: 0.8rem;
+  }
+
+  .icon {
+    font-size: 1.5rem;
   }
 }

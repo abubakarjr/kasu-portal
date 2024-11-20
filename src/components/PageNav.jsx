@@ -1,114 +1,110 @@
-// import { NavLink } from "react-router-dom";
-// import Logo from "./Logo";
-// import styles from "./PageNav.module.css";
-
-// function PageNav() {
-//   return (
-//     <nav className={styles.nav}>
-//       <Logo />
-//       <ul className={styles.menu}>
-//         <li>
-//           <NavLink to="/profile" activeClassName={styles.active}>
-//             Profile
-//           </NavLink>
-//         </li>
-//         <li>
-//           <NavLink to="/courses" activeClassName={styles.active}>
-//             Courses
-//           </NavLink>
-//         </li>
-//         <li>
-//           <NavLink to="/tuition" activeClassName={styles.active}>
-//             Tuition
-//           </NavLink>
-//         </li>
-//         <li>
-//           <NavLink to="/examination" activeClassName={styles.active}>
-//             Examination
-//           </NavLink>
-//         </li>
-//         <li>
-//           <NavLink to="/result" activeClassName={styles.active}>
-//             Result
-//           </NavLink>
-//         </li>
-//         <li>
-//           <NavLink to="/accommodation" activeClassName={styles.active}>
-//             Accommodation
-//           </NavLink>
-//         </li>
-//         <li>
-//           <NavLink to="/login" className={styles.ctaLink}>
-//             Login
-//           </NavLink>
-//         </li>
-//       </ul>
-//     </nav>
-//   );
-// }
-
-// export default PageNav;
-
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import {
+  FaUser,
+  FaBook,
+  FaMoneyBillWave,
+  FaFileAlt,
+  FaBuilding,
+  FaSignInAlt,
+  FaBars,
+  FaSearch,
+  FaBell,
+} from "react-icons/fa"; // Icon imports
 import Logo from "./Logo";
 import styles from "./PageNav.module.css";
 
 function PageNav() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(true); // Sidebar is open by default
 
   function toggleMenu() {
     setMenuOpen((prev) => !prev);
   }
 
   return (
-    <nav className={styles.nav}>
-      <Logo />
-      <button
-        className={styles.hamburger}
-        onClick={toggleMenu}
-        aria-label="Toggle navigation menu"
+    <div className={styles.container}>
+      {/* Top Navbar */}
+      <header className={styles.topNav}>
+        <button
+          className={styles.hamburger}
+          onClick={toggleMenu}
+          aria-label="Toggle navigation menu"
+        >
+          <FaBars />
+        </button>
+        <div className={styles.logo}>
+          <Logo />
+        </div>
+        <div className={styles.searchBar}>
+          <FaSearch className={styles.searchIcon} />
+          <input
+            type="text"
+            placeholder="Search"
+            className={styles.searchInput}
+          />
+        </div>
+        <div className={styles.userProfile}>
+          <FaBell className={styles.notificationIcon} />
+          <img
+            src="https://via.placeholder.com/40"
+            alt="User Profile"
+            className={styles.profileImage}
+          />
+        </div>
+      </header>
+
+      {/* Sidebar */}
+      <aside
+        className={`${styles.sidebar} ${
+          menuOpen ? styles.open : styles.closed
+        }`}
       >
-        ☰
-      </button>
-      <ul className={`${styles.menu} ${menuOpen ? styles.open : ""}`}>
-        <li>
-          <NavLink to="/profile" activeClassName={styles.active}>
-            Profile
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/courses" activeClassName={styles.active}>
-            Courses
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/tuition" activeClassName={styles.active}>
-            Tuition
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/examination" activeClassName={styles.active}>
-            Examination
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/result" activeClassName={styles.active}>
-            Result
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/accommodation" activeClassName={styles.active}>
-            Accommodation
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/login" className={styles.ctaLink}>
-            Login
-          </NavLink>
-        </li>
-      </ul>
-    </nav>
+        <ul className={styles.menu}>
+          <li>
+            <NavLink to="/profile" activeClassName={styles.active}>
+              <FaUser className={styles.icon} />
+              <span>Profile</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/courses" activeClassName={styles.active}>
+              <FaBook className={styles.icon} />
+              <span>Courses</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/tuition" activeClassName={styles.active}>
+              <FaMoneyBillWave className={styles.icon} />
+              <span>Tuition</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/examination" activeClassName={styles.active}>
+              <FaFileAlt className={styles.icon} />
+              <span>Examination</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/result" activeClassName={styles.active}>
+              <FaFileAlt className={styles.icon} />
+              <span>Result</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/accommodation" activeClassName={styles.active}>
+              <FaBuilding className={styles.icon} />
+              <span>Accommodation</span>
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/login" className={styles.ctaLink}>
+              <FaSignInAlt className={styles.icon} />
+              <span>Login</span>
+            </NavLink>
+          </li>
+        </ul>
+      </aside>
+    </div>
   );
 }
 
