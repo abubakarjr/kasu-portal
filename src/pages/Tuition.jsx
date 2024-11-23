@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import PageNav from "../components/PageNav";
 import styles from "./Tuition.module.css";
 
@@ -14,6 +15,7 @@ function Tuition() {
         </p>
         <button className={styles.paymentButton}>Make a Payment</button>
       </div>
+      <Footer />
     </div>
   );
 }

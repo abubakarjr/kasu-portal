@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import PageNav from "../components/PageNav";
 import styles from "./Result.module.css";
 
@@ -37,6 +38,7 @@ function Result() {
           </tbody>
         </table>
       </div>
+      <Footer />
     </div>
   );
 }

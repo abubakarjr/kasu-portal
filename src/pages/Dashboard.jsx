@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import PageNav from "../components/PageNav";
 import styles from "./Dashboard.module.css";
+import Footer from "../components/Footer";
 
 function Dashboard() {
   return (
@@ -55,14 +56,9 @@ function Dashboard() {
               </Link>
             </div>
           </div>
-
-          <footer className={styles.footer}>
-            <p className={styles.copyright}>
-              &copy; Copyright {new Date().getFullYear()} by KASU
-            </p>
-          </footer>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

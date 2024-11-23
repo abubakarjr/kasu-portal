@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PageNav from "../components/PageNav";
 import styles from "./Courses.module.css";
+import Footer from "../components/Footer";
 
 function Courses() {
   const [selectedCourses, setSelectedCourses] = useState([]);
@@ -88,6 +89,7 @@ function Courses() {
           </button>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

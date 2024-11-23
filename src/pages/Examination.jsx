@@ -1,5 +1,6 @@
 // import PageNav from "../components/PageNav";
 // import { Outlet } from "react-router-dom";
+import Footer from "../components/Footer";
 import styles from "./Examination.module.css";
 import Result from "./Result";
 
@@ -44,6 +45,7 @@ function Examination() {
           </tbody>
         </table>
       </div>
+      <Footer />
     </div>
   );
 }

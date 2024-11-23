@@ -1,3 +1,4 @@
+import Footer from "../components/Footer";
 import PageNav from "../components/PageNav";
 import styles from "./Accommodation.module.css";
 
@@ -43,6 +44,7 @@ function Accommodation() {
           </button>
         </form>
       </div>
+      <Footer />
     </div>
   );
 }
