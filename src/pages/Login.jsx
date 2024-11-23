@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Login.module.css";
 import ButtonStyles from "../components/Button.Module.css"; // Importing Button styles
+import PageNav from "../components/PageNav";
+// import Footer from "../components/Footer";
 
 export default function StudentLogin() {
   const [studentId, setStudentId] = useState("");
@@ -14,6 +16,7 @@ export default function StudentLogin() {
 
   return (
     <main className={styles.login}>
+      <PageNav />
       <div className={styles.card}>
         <div className={styles.logo}>
           <img src="/logo.png" alt="KASU Portal Logo" />
@@ -54,6 +57,7 @@ export default function StudentLogin() {
           </button>
         </form>
       </div>
+      {/* <Footer /> */}
     </main>
   );
 }
