@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import styles from "./Login.module.css";
-import ButtonStyles from "../components/Button.Module.css"; // Importing Button styles
+import styles from "./Login.module.css"; // Keep this import for styling
 import Footer from "../components/Footer";
 
 export default function StudentLogin() {
@@ -47,16 +45,8 @@ export default function StudentLogin() {
                 required
               />
             </div>
-            <button
-              type="submit"
-              className={`${ButtonStyles.btn} ${ButtonStyles.primary}`}
-            >
-              <Link
-                to="/"
-                className={`${ButtonStyles.btn} ${ButtonStyles.primary}`}
-              >
-                Login
-              </Link>
+            <button type="submit" className={styles.btnPrimary}>
+              Login
             </button>
           </form>
         </div>

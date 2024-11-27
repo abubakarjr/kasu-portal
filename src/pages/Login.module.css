@@ -67,6 +67,22 @@
   outline: none;
 }
 
+/* Button Styling */
+.btnPrimary {
+  padding: 0.8rem 1.2rem;
+  font-size: 1.6rem;
+  background-color: var(--color-brand--1); /* Adjust color as needed */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btnPrimary:hover {
+  background-color: var(--color-brand--2); /* Adjust hover effect */
+}
+
 /* Header Styling */
 .header {
   background-color: var(--color-dark--2);
