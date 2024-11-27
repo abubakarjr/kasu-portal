@@ -1,7 +1,7 @@
-.coursesContainer {
+.container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 90vh;
   background: linear-gradient(
     to bottom right,
     var(--color-primary),
@@ -11,11 +11,13 @@
   padding: 1.5rem;
 }
 
-.coursesContent {
+.content {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 2rem;
   justify-content: center;
+  padding-top: 6rem;
+  padding-left: 6rem;
 }
 
 .card {
@@ -121,9 +123,8 @@
   background-color: #218838;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
-  .coursesContent {
+  .content {
     flex-direction: column;
     gap: 1.5rem;
   }

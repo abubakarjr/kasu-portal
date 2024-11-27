@@ -1,68 +1,57 @@
+/* Footer Styles */
 .footer {
-  background-color: var(--color-brand--1);
-  color: var(--color-light--1);
-  /* padding: 2rem 1rem; */
+  background-color: #006400; /* Green color */
+  color: #f5f5dc; /* Cream color */
+  padding-top: 1rem;
   text-align: center;
-  margin-top: auto;
   height: 6rem;
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .links {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .link {
-  color: var(--color-light--1);
+  color: #f5f5dc; /* Cream color */
   text-decoration: none;
   font-size: 1rem;
-  transition: color 0.3s;
 }
 
 .link:hover {
-  color: var(--color-primary);
+  color: #fff; /* Light cream color */
 }
 
 .socialMedia {
   display: flex;
-  gap: 1rem;
   justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .icon {
-  font-size: 1.5rem;
-  color: var(--color-light--1);
+  font-size: 2rem;
+  color: #f5f5dc; /* Cream color */
   transition: color 0.3s;
 }
 
 .icon:hover {
-  color: var(--color-primary);
-}
-
-.copyright {
-  font-size: 0.9rem;
+  color: #fff; /* Light cream color */
 }
 
 .rightbar {
-  height: 100%;
-  width: 2rem;
-  background-color: var(--color-brand--1);
-  padding: 2rem 0;
-  display: flex;
-  flex-direction: column;
-  transition: width 0.3s;
-  position: fixed;
-  top: 6rem; /* Below the top nav */
-  right: 0;
-  overflow: hidden;
-  z-index: 900;
+  margin-top: 1rem; /* Optional, to space the sidebar */
+}
+
+.copyright {
+  font-size: 0.875rem;
+  margin: 0;
 }

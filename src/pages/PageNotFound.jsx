@@ -1,11 +1,13 @@
+import Footer from "../components/Footer";
 import PageNav from "../components/PageNav";
 
 function PageNotFound() {
   return (
-    <div>
+    <>
       <PageNav />
-      PageNotFound
-    </div>
+      <div>PageNotFound</div>
+      <Footer />
+    </>
   );
 }
 

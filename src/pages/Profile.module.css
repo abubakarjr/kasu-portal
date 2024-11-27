@@ -1,163 +1,130 @@
-/* Profile Container */
-.profile {
+@import "https://unpkg.com/leaflet@1.7.1/dist/leaflet.css";
+@import "https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap";
+
+.profilePage {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-top: 8rem;
-  background: linear-gradient(
-    to bottom right,
-    var(--color-primary-light),
-    var(--color-secondary-light)
-  );
-  color: var(--color-dark--1);
-  /* height: 100vh; */
+  /* height: 90vh; */
+  background-color: var(--color-dark--0);
+  color: var(--color-light--2);
+  border: solid 2px;
 }
 
-/* Header Section */
-.header {
+.profileContainer {
+  flex: 1;
+  padding-top: 6rem;
+  padding-left: 6rem;
+  background-color: var(--color-dark--1);
+  border: solid 2px;
+  height: 90vh;
+}
+
+.profileHeader {
+  background-color: var(--color-brand--1);
+  padding: 2rem;
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
-  /* max-width: 1200px; */
-  background: #fff;
-  /* padding: 1.5rem 2rem; */
-  border-radius: 5px;
-  box-shadow: 0 8px 16px rgba(96, 63, 63, 0.1);
   margin-bottom: 2rem;
-  overflow: hidden;
-  border: solid #006400;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.logoWrapper,
-.studentPhotoWrapper {
-  flex: 1;
+.headerContent {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 15vh;
 }
 
-.logo {
-  width: 100px;
-  height: auto;
-}
-
-.studentPhoto {
-  width: 100px;
-  height: 100px;
+.profilePhoto {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #006400; /* KASU Green */
+  border: 3px solid var(--color-light--3);
 }
 
-.headerText {
-  text-align: center;
-  flex: 2;
-  color: #006400;
-}
-
-.headerText h1 {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.headerText h2,
-.headerText h3 {
-  font-size: 1.4rem;
-  margin: 0.3rem 0;
-}
-
-.headerText h4 {
-  font-size: 1.5rem;
+.cta {
+  display: inline-block;
+  background-color: var(--color-brand--2);
+  color: var(--color-light--2);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 1.6rem;
   font-weight: 600;
-  margin-top: 0.5rem;
-}
-
-/* Table Section */
-.tableContainer {
-  width: 80%;
-  /* max-width: 900px; */
-  background: #fff;
+  padding: 1rem 3rem;
   border-radius: 5px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  /* padding: 1.5rem; */
+  transition: all 0.2s;
 }
 
-.studentTable {
+.cta:hover {
+  background-color: var(--color-brand--1);
+  color: #fff;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section {
+  background-color: var(--color-dark--0);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--color-brand--1);
+}
+
+.historyTable {
   width: 100%;
   border-collapse: collapse;
 }
 
-.studentTable th,
-.studentTable td {
-  padding: 1.2rem 1.5rem;
+.historyTable th,
+.historyTable td {
+  padding: 1rem;
   text-align: left;
-  font-size: 1.2rem;
-  border-bottom: 1px solid #ddd;
+  border: 2px solid var(--color-green);
 }
 
-.studentTable th {
-  background-color: #006400; /* KASU Green */
-  color: white;
-  text-transform: uppercase;
-  font-weight: bold;
+.historyTable th {
+  background-color: var(--color-green);
+  color: var(--color-cream);
+}
+
+.historyTable td {
+  background-color: var(--color-dark--1);
+}
+
+.actionSection {
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.actionButton {
+  background-color: var(--color-brand--2);
+  color: var(--color-light--2);
+  padding: 1rem 1rem;
+  border: 2px solid;
+  border-radius: 5px;
   font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.studentTable td {
-  font-size: 1.3rem;
-  color: #444444;
-}
-
-.studentTable a {
-  color: #006400;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.studentTable a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .headerText h1 {
-    font-size: 1.6rem;
-  }
-
-  .headerText h2,
-  .headerText h3,
-  .headerText h4 {
-    font-size: 1.2rem;
-  }
-
-  .studentTable th,
-  .studentTable td {
-    font-size: 1.1rem;
-    padding: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .header {
-    padding: 1rem;
-    width: 70%;
-    margin-left: 60px;
-  }
-
-  .headerText {
-    margin-top: 1rem;
-  }
-
-  .studentTable th,
-  .studentTable td {
-    font-size: 1rem;
-    padding: 0.8rem;
-    width: 70%;
-    margin-left: 60px;
-  }
+.actionButton:hover {
+  background-color: var(--color-brand--1);
 }

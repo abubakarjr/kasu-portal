@@ -1,7 +1,7 @@
-.examContainer {
+.container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 90vh;
   background: linear-gradient(
     to bottom right,
     var(--color-primary),
@@ -11,49 +11,87 @@
   padding: 1.5rem;
 }
 
-.examContent {
+.content {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  justify-content: center;
+  padding-top: 6rem;
+  padding-left: 6rem;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 610px;
   text-align: center;
 }
 
-.examContent h2 {
-  font-size: 2.2rem;
-  color: var(--color-dark--2);
+.card h3 {
+  font-size: 1.5rem;
+  color: var(--color-primary);
   margin-bottom: 1rem;
 }
 
-.examContent p {
+.card p {
   font-size: 1.4rem;
   color: var(--color-dark--1);
   line-height: 1.6;
 }
 
+.tableWrapper {
+  max-height: 300px; /* Increased height to better fit table content */
+  overflow-y: auto;
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
 .examTable {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1.5rem;
+  text-align: left;
 }
 
 .examTable th,
 .examTable td {
-  padding: 0.8rem 1rem;
-  text-align: left;
-  border-bottom: 1px solid var(--color-light--1);
+  padding: 1rem; /* Increased padding for better spacing */
+  border: 1px solid #000;
 }
 
 .examTable th {
-  background-color: var(--color-brand--1);
-  color: var(--color-light--1);
-  font-size: 1.4rem;
-}
-
-.examTable td {
-  font-size: 1.2rem;
-  color: var(--color-dark--2);
+  background-color: var(--color-primary);
+  color: #000; /* Changed to white for better contrast */
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .examTable tr:nth-child(even) {
-  background-color: var(--color-light--3);
+  background-color: #bed7c4;
+}
+
+.examTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 100%;
+    padding: 1rem; /* Reduced padding for smaller screens */
+  }
+
+  .examTable th,
+  .examTable td {
+    padding: 0.6rem; /* Reduced padding on smaller screens */
+    font-size: 1.2rem; /* Reduced font size for readability */
+  }
 }

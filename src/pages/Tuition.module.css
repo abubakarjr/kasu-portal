@@ -1,7 +1,7 @@
-.tuitionContainer {
+.container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 90vh;
   background: linear-gradient(
     to bottom right,
     var(--color-primary),
@@ -11,36 +11,103 @@
   padding: 1.5rem;
 }
 
-.tuitionContent {
+.content {
   display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  flex-wrap: nowrap;
+  gap: 2rem;
+  justify-content: center;
+  padding-top: 6rem;
+  padding-left: 6rem;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 610px;
   text-align: center;
 }
 
-.tuitionContent h2 {
-  font-size: 2.2rem;
-  color: var(--color-dark--2);
+.card h3 {
+  font-size: 1.5rem;
+  color: var(--color-primary);
   margin-bottom: 1rem;
 }
 
-.tuitionContent p {
+.card p {
   font-size: 1.4rem;
   color: var(--color-dark--1);
   line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 .paymentButton {
-  padding: 0.8rem 1.6rem;
-  font-size: 1.4rem;
-  color: var(--color-light--1);
-  background-color: var(--color-brand--1);
-  border: none;
+  background-color: #28a745;
+  color: white;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
+  width: 100%;
 }
 
 .paymentButton:hover {
-  background-color: var(--color-brand--2);
+  background-color: var(--color-primary--dark);
+}
+
+.tableWrapper {
+  max-height: 250px;
+  overflow-y: auto;
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.feeTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.feeTable th,
+.feeTable td {
+  padding: 0.8rem;
+  border: 1px solid #000;
+}
+
+.feeTable th {
+  background-color: var(--color-primary);
+  color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.feeTable tr:nth-child(even) {
+  background-color: #bed7c4;
+}
+
+.feeTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+.noData {
+  text-align: center;
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--color-dark--2);
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .card {
+    width: 100%;
+  }
 }

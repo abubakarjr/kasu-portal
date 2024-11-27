@@ -46,7 +46,7 @@ function PageNav() {
         <div className={styles.userProfile}>
           <FaBell className={styles.notificationIcon} />
           <img
-            src="https://via.placeholder.com/40"
+            src="/profile.jpg"
             alt="User Profile"
             className={styles.profileImage}
           />
@@ -82,12 +82,6 @@ function PageNav() {
             <NavLink to="/examination" activeClassName={styles.active}>
               <FaFileAlt className={styles.icon} />
               <span>Examination</span>
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/result" activeClassName={styles.active}>
-              <FaFileAlt className={styles.icon} />
-              <span>Result</span>
             </NavLink>
           </li>
           <li>

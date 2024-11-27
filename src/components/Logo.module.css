@@ -25,7 +25,7 @@
 .logoText {
   font-size: 4rem; /* Text size */
   font-weight: bold; /* Makes text more prominent */
-  color: var(--color-dark--1); /* Matches branding color */
+  color: var(--color-cream); /* Matches branding color */
 }
 
 /* Responsive Adjustments */

@@ -5,23 +5,6 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
-        {/* Footer Links */}
-        <div className={styles.links}>
-          <a href="/about" className={styles.link}>
-            About Us
-          </a>
-          <a href="/contact" className={styles.link}>
-            Contact
-          </a>
-          <a href="/privacy" className={styles.link}>
-            Privacy Policy
-          </a>
-          <a href="/terms" className={styles.link}>
-            Terms of Service
-          </a>
-        </div>
-
-        {/* Social Media Links */}
         <div className={styles.socialMedia}>
           <a
             href="https://facebook.com/abubakartanko99"
@@ -52,10 +35,8 @@ function Footer() {
             <FaLinkedin className={styles.icon} />
           </a>
         </div>
-
         {/* Sidebar */}
-        <aside1 className={styles.rightbar}></aside1>
-
+        <aside className={styles.rightbar}></aside> {/* Updated to <aside> */}
         {/* Copyright */}
         <div className={styles.copyright}>
           &copy; {new Date().getFullYear()} KASU Portal. All Rights Reserved.

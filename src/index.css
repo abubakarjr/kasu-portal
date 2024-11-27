@@ -4,82 +4,163 @@
 
 /* These CSS variables are global, so they are available in all CSS modules */
 :root {
-  --color-brand--1: #41ab5d;
-  --color-brand--2: #008000;
+  /* KASU primary and secondary colors */
+  --color-green: #41ab5d; /* KASU Green */
+  --color-cream: #f2e5d2; /* KASU Cream (light background) */
 
-  --color-dark--0: #242a2e;
-  --color-dark--1: #2d3439;
-  --color-dark--2: hsl(62, 49%, 86%);
-  --color-light--1: #aaa;
-  --color-light--2: #ececec;
-  --color-light--3: #d6dee0;
+  /* Supporting color tones */
+  --color-dark: #2d3439; /* Dark green for text and accents */
+  --color-light: #ffffff; /* White for contrast and clarity */
 }
 
 * {
   margin: 0;
   padding: 0;
-  /* box-sizing: inherit; */
+  box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%;
-  box-sizing: border-box;
-}
-
-/* For all browsers */
-::-webkit-scrollbar {
-  display: none; /* Hides scrollbar in Webkit browsers (Chrome, Safari, Edge) */
 }
 
 body {
   font-family: "Manrope", sans-serif;
-  color: var(--color-light--2);
+  color: var(--color-dark); /* Dark green text */
+  background-color: var(--color-cream); /* Cream background */
   font-weight: 400;
   line-height: 1.6;
-  scrollbar-width: none; /* Hides scrollbar in Firefox */
-  -ms-overflow-style: none; /* Hides scrollbar in Internet Explorer */
+}
+
+.scrollable {
+  max-height: 300px; /* Adjust as needed */
+  overflow-y: scroll; /* Allow vertical scrolling */
+  scrollbar-width: none; /* For Firefox */
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+.scrollable::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
 }
 
 label {
   font-size: 1.6rem;
   font-weight: 600;
+  color: var(--color-dark); /* Dark green labels */
 }
 
 input,
 textarea {
   width: 100%;
-  padding: 0.8rem 1.2rem;
+  padding: 1rem 1.5rem;
   font-family: inherit;
   font-size: 1.6rem;
-  border: none;
-  border-radius: 5px;
-  background-color: var(--color-light--3);
+  border: 1px solid var(--color-dark); /* Dark green border */
+  border-radius: 8px;
+  background-color: var(--color-cream); /* Cream background for inputs */
   transition: all 0.2s;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   outline: none;
-  background-color: #fff;
+  background-color: var(--color-light); /* White background on focus */
+  border-color: var(--color-green); /* Green border on focus */
 }
 
 .cta:link,
 .cta:visited {
   display: inline-block;
-  background-color: var(--color-brand--2);
-  color: var(--color-dark--1);
+  background-color: var(--color-green); /* Green background */
+  color: var(--color-light); /* White text */
   text-transform: uppercase;
   text-decoration: none;
   font-size: 1.6rem;
   font-weight: 600;
-  padding: 1rem 3rem;
-  border-radius: 5px;
+  padding: 1.2rem 3.2rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
 }
 
-/*
-"importCSSModule": {
-    "prefix": "csm",
-    "scope": "javascript,typescript,javascriptreact",
-    "body": ["import styles from './${TM_FILENAME_BASE}.module.css'"],
-    "description": "Import CSS Module as `styles`"
-  },
-*/
+.cta:hover {
+  background-color: var(--color-dark); /* Dark green on hover */
+}
+
+.cta:focus {
+  background-color: var(--color-dark); /* Keep dark green on focus */
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  color: var(--color-dark); /* Dark green for headings */
+}
+
+p {
+  color: var(--color-dark); /* Dark green for paragraph text */
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+.card {
+  background-color: var(--color-cream); /* Cream background for cards */
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  margin-bottom: 2rem;
+}
+
+.card-header {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-dark); /* Dark green for card headers */
+}
+
+.card-body {
+  font-size: 1.6rem;
+  color: var(--color-dark); /* Dark green for card text */
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.profile-header {
+  background-color: var(--color-green); /* Green background */
+  padding: 2rem;
+  width: 100%;
+  color: var(--color-light); /* White text */
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 900px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.profile-info .info-item {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--color-dark); /* Dark green text for profile info */
+}
+
+.profile-info .info-item span {
+  font-weight: 600;
+  color: var(--color-green); /* Green text for key data */
+}
+
+.profile-footer {
+  margin-top: 3rem;
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--color-dark); /* Dark green footer text */
+}
