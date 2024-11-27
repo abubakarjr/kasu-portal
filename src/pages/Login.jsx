@@ -1,14 +1,19 @@
 import { useState } from "react";
-import styles from "./Login.module.css"; // Keep this import for styling
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook
+import styles from "./Login.module.css";
 import Footer from "../components/Footer";
 
 export default function StudentLogin() {
   const [studentId, setStudentId] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate(); // Initialize useNavigate hook
 
   const handleLogin = (e) => {
     e.preventDefault();
     console.log({ studentId, password });
+
+    // After successful login, navigate to the Dashboard page
+    navigate("/dashboard"); // Redirect to dashboard page
   };
 
   return (
@@ -45,7 +50,7 @@ export default function StudentLogin() {
                 required
               />
             </div>
-            <button type="submit" className={styles.btnPrimary}>
+            <button type="submit" className={(styles.btn, styles.btnPrimary)}>
               Login
             </button>
           </form>
